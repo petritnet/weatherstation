@@ -64,7 +64,7 @@ DHT11-sensorin johdotus:
 
 ![OLED-näytön kytkeminen NodeMCU-piiriin](images/nodemcu_oled.png)
 
-OLED-näyttö käyttää i2c-protokollaa. Jodotuksena:
+OLED-näyttö käyttää i2c-protokollaa. Johdotuksena:
 | Näyttö | NodeMCU | Kuvaus        | Väri |
 |--------|---------|---------------|------|
 | VCC    | 3v3     | Virta, 3.3V   | Punainen |
