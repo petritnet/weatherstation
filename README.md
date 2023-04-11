@@ -130,6 +130,9 @@ Nyt valitaan ohjelmoitava piiri.
 
 Piiriksi valitaan `NodeMCU 1.0` ja portiksi se portti, johon piiri on yhdistetty.
 Linuxissa tämä saattaa olla esimerkiksi `/dev/ttyUSB0` ja Windowsissa esimerkiksi `COM3`.
+Tässä kohtaa kannattaa myös varmistaa, että käyttäjällä on kirjoitusoikeus käytössä
+olevaan porttiin. Esimerkiksi Ubuntu Linuxissa `/dev/ttyUSB0`-laitteeseen on kirjoitusoikeus
+ryhmään `dialout` kuuluvilla käyttäjillä. 
 
 ![NodeMCU 1.0](images/select_board_nodemcu10.png)
 
