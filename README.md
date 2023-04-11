@@ -7,6 +7,25 @@ ohjeita.
 - [Pdf-opas](https://blog.squix.org/weatherstation-guide)
 - [Github repositorio](https://github.com/ThingPulse/esp8266-weather-station)
 
+## Ohjeet
+
+Tämä repositorio koostuu useampaan hakemistoon koostetuista pienemmistä ohjelmista,
+joilla voi tutustua NodeMCU:n ja eri modulien käytön ohjelmointiin sekä
+niistä yhdistelemällä tehdystä sääaseman koodista.
+
+Aloita lukemalla alla oleva selostus käytettävistä osista ja Arduino IDE:n asentamisesta.
+Jatka sen jälkeen osaamisesi, kiinnostuksesi ja tarpeidesi mukaan osaohjeilla tai siirry
+lopullisen sääaseman koodiin.
+
+- [01_dht11](01_dht11): Ohjelmien rakenne, kirjastot, Serial Monitor ja DHT11-sensorin käyttö.
+- 02_oled: Oled-näytön (SSD1306) käyttö, kirjasto, toiminnot ja esimerkki (i2c-protokolla)
+- 02_oled_spi: Oled-näytön (SSD1306) käyttö, kirjasto, toiminnot ja esimerkki (spi-protokolla)
+- 03_ws_oled: Säätietojen näyttö oled-näytöllä.
+- 04_wifi: WiFi-piirin käyttö, kirjastot, yhteyden luonti
+- 05_ntp: Haetaan NTP-aika verkosta ja näytetään näytöllä.
+- 06_ws: Sääasema, joka näyttää säätiedot ja kellonajan näytöllä.
+- wsThinkSpeak: Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun.
+
 ## Osat
 
 - NodeMCU V2 ESP8266 micro controller
