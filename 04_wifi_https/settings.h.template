@@ -1,0 +1,19 @@
+// Laita tähän käytettävän wifi:n tiedot
+const char* ssid = "ssssssssss";
+const char* password = "ppppppppp";
+
+
+// Palvelimen wttr.in julkinen avain.
+// Haettu komentorivikomennolla.
+// openssl s_client -connect wttr.in:443 | openssl x509 -pubkey -noout
+const char pubkey [] PROGMEM = R"PUBKEY(
+-----BEGIN PUBLIC KEY-----
+MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr3CeeCWMU1ky3qkPdtiY
+0h/aw5tuEJW5P6Y/Q3C+is6HgguyZhwZ017vpYg7+kzg3PBMZs5KEEX25OoLwtjW
+PBW+P25NE5PNVQbT/sjVsa54RK8y8Eeb/5RMwfQ5Mb1zUtrBEHcODa2sQ0zq9mZ6
+by5/IQdFJHBlXg4jFXNWRH/X2fw00rvS3wBlFHhZ1mJWf3jqVj63WWoMkxOdqQ3K
+KRGHvTzvRxd0YVekg6QEk9d4p80Fx4DFPLHBZmCAX6dX9Trzqf4DN8NEEYtphecZ
++nH2J2w6bX+GgzXIWXzvu4xES2CSAu9iwh8rTSweK0rh1Ch+xwrPyCr/TLs3fVi0
+FQIDAQAB
+-----END PUBLIC KEY-----
+)PUBKEY";

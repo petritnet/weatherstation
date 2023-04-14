@@ -1,6 +1,7 @@
-# WiFi
+# WiFi (https)
 
-Opetellaan NodeMCU:n yhdistäminen WiFi-verkkoon.
+Opetellaan NodeMCU:n yhdistäminen WiFi-verkkoon ja verkon käyttö salatulla
+https-protokollalla.
 
 Jotta NodeMCU:lla voidaan olla yhteydessä verkkoon, täytyy tehdä ainakin kaksi asiaa:
 - Muodostaa yhteys WiFi-tukiasemaan.
@@ -14,6 +15,14 @@ Ladataan ensimmäiseksi tarvittava WiFi-kirjasto:
 #include <ESP8266WiFi.h>
 ```
 
+Tämän lisäksi ladataan suojattuun yhteyteen tarvittava kirjasto:
+```c++
+#include <WiFiClientSecure.h>
+```
+Tällä saadaan käyttöön luokka `WiFiClientSecure`, joka vastaa esimerkissä
+[04_wifi](../04_wifi/) käytettyä luokkaa `WiFiClient`, mutta sisältää
+tuen salaukselle ja palvelimen varmenteen (sertifikaatin) tarkistamiselle.
+
 Yhteyden luomiseksi tukiasemaan tarvitaan tukiaseman tarjoaman verkon nimi eli ssid
 sekä sen salasana. Tässä esimerkkiohjelmassa nämä tiedot on laitettu erilliseen tiedostoon `settings.h`, joka ladataan mukaan komennolla:
 
@@ -21,11 +30,18 @@ sekä sen salasana. Tässä esimerkkiohjelmassa nämä tiedot on laitettu erilli
 #include "settings.h"
 ```
 
-Tässä tiedostossa ssid ja salasana on määritelty merkkijonomuuttujina:
+Tässä tiedostossa ssid ja salasana on määritelty merkkijonomuuttujina.
 ```c++
 const char* ssid = "sssssssssss";
 const char* password = "ppppppppppp";
 ```
+
+Lisäksi tiedostossa on upotettuna palvelimen wttr.in varmenteen julkinen
+avain, jotta sen varmenne voidaan tarkistaa yhteyttä luotaessa.
+Normaalisti selaimilla on tiedossa varmenteiden myöntäjien avaimet ja yksittäisten
+palvelinten varmenteet voidaan tarkistaa sitä kautta. Yhteen palvelimeen yhteydessä
+olevan pienen sulautetun laitteen tapauksessa voi kuitenkin olla yksinkertaisempaa
+vain sisällyttää kyseisen palvelimen julkinen avain mukaan koodiin.
 
 Ennen kuin voit kääntää ja ajaa tätä ohjelmaa, sinun pitää luoda tuo tiedosto.
 Kopioi pohjaksi annettu `settings.h.template` tälle nimelle ja vaihda sinne
@@ -34,7 +50,7 @@ käyttämäsi verkon tiedot.
 Yhdistettävän palvelimen nimi on ohjelmassa laitettu muuttujaan `host`,
 josta sitä on helppo käyttää muualla koodissa.
 ```c++
-const char* host = "www.squix.org";
+const char* host = "wttr.in";
 ```
 
 ## Tukiasemaan yhdistäminen
@@ -62,10 +78,23 @@ sarjakonsoliin laitteelle saatu ip-osoite.
 ## Verkkosivun hakeminen
 
 Kun alustustoimet, eli verkkoon kytkeytyminen, on tehty, voidaan palvelimelta pyytää
-haluttu sivu. Tähän käytetään luokan `WiFiClient` objektia, joka esitellään komennolla:
+haluttu sivu. Tähän käytetään nyt luokan `WiFiClientSecure` objektia, joka esitellään komennolla:
 ```c++
-WiFiClient client;
+WiFiClientSecure client;
 ```
+
+Erona suojaamattomaan yhteyteen on käytetty luokka, yhteyden portti (443) sekä
+komennot
+```c++
+BearSSL::PublicKey key(pubkey);
+client.setKnownKey(&key);
+```
+joilla ensin muodostetaan `BearSSL::PublicKey`-tyyppiä oleva julkinen avain
+ja asetetaan se `client`-objektille tunnetuksi avaimeksi. Nyt yhteyttä luotaessa
+`client` osaa tunnistaa palvelimen varmenteen ja suostuu muodostamaan yhteyden.
+Toinen vaihtoehto olisi kytkeä varmenteen tarkistaminen pois päältä komennolla
+`client.setInsecure()`. Tämä tarkoittaisi, että yhteys kyllä salattaisiin,
+mutta ei varmennettaisi, että keskukstellaan oikean palvelimen kanssa.
 
 Palvelimelle haluttuun porttiin yhteyden ottaminen tapahtuu `connect()`-metodilla.
 
@@ -80,11 +109,5 @@ haluttu pyyntö http-protokollan mukaisena tekstinä.
 Seuraavaksi odotetaan enintään 5 sekuntia vastausta palvelimelta. Jos vastaus
 saapuu, se luetaan rivi kerrallaan ja tulostetaan sarjakonsoliin.
 
-## Turvallisuus
-
-Tämä esimerkkiohjelma käyttää yhteyden muodostamiseen salaamatonta http-protokollaa
-porttiin 80. Tässä tapauksessa yhteys onnistuu, sillä esimerkkinä oleva palvelin
-ottaa pyynnön vastaan. Nykyisin kuitenkin suuri osa palvelimista toimii
-salatulla https-protokollalla portissa 443.
-
-Tästä enemmän esimerkissä [04_wifi_https](../04_wifi_https/).
+Vastauksena sarjakonsoliin pitäisi tulostua samanlainen sääennuste kuin
+menemällä selaimella osoitteeseen https://wttr.in/turku?2nTA .

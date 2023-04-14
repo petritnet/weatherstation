@@ -1,0 +1,3 @@
+// Laita tähän käytettävän wifi:n tiedot
+const char* ssid = "ssssssssss";
+const char* password = "ppppppppp";
