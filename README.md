@@ -21,7 +21,8 @@ lopullisen sääaseman koodiin.
 - [02_oled](02_oled): Oled-näytön (SSD1306) käyttö, kirjasto, toiminnot ja esimerkki (i2c-protokolla)
 - [02_oled_spi](02_oled_spi): Oled-näytön (SSD1306) käyttö, kirjasto, toiminnot ja esimerkki (spi-protokolla)
 - [03_ws_oled](03_ws_oled): Säätietojen näyttö oled-näytöllä.
-- [04_wifi](04_wifi): WiFi-piirin käyttö, kirjastot, yhteyden luonti
+- [04_wifi](04_wifi): WiFi-piirin käyttö, kirjastot, yhteyden luonti (suojaamaton yhteys)
+- [04_wifi_https](04_wifi_https): WiFi-piirin käyttö, kirjastot, yhteyden luonti (suojattu yhteys)
 - [05_ntp](05_ntp): Haetaan NTP-aika verkosta ja näytetään näytöllä.
 - [06_ws](06_ws): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä.
 - wsThinkSpeak: Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun.
