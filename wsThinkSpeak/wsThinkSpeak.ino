@@ -179,6 +179,8 @@ void setup() {
     connectNetwork();
     // Asetetaan aika.
     getNTPTime();
+    // Alustetaan ThingSpeak verkkoyhteydellä.
+    ThingSpeak.begin(client);
 }
 
 void loop() {

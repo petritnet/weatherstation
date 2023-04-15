@@ -48,7 +48,7 @@ laitetaan erilliseen `settings.h`-tiedostoon, jolle löytyy pohja tiedostosta
 
 ThinkSpeakin asetuksiin tarvitaan kanavan id-numero, joka löytyy kanavan
 osoitteen lopusta, sekä API-avaimet kirjoitusta ja lukemista varten.
-Tämä ojelma tosin käyttää vain kirjoitusavainta.
+Tämä ohjelma tosin käyttää vain kirjoitusavainta.
 
 Lisäksi asetuksissa annetaan muuttujanimet kolmelle datakentän numerolle.
 Jos kenttiä tarvitaan enemmän tai vähemmän, näitä voidaan muuttaa.
@@ -56,9 +56,15 @@ Jos kenttiä tarvitaan enemmän tai vähemmän, näitä voidaan muuttaa.
 
 ## Ohjelma
 
-Ohjelma on muuten samanlainen kuin [06_ws](../06_ws/), mutta lisäksi siinä on
-funktio `write2TSData()`, jolla data lähetetään ThinkSpeak-palveluun, sekä
-`loop()`-funktiossa oleva lohko, joka tekee lähetyksen, kun riittävän pitkä
+Ohjelma on muuten samanlainen kuin [06_ws](../06_ws/), mutta lisäksi siinä ovat
+toiminnallisuudet datan lähettämiseksi ThingSpeak-palveluun.
+Ensin pitää käynnistyksen yhteydessä `setup()`-funktiossa muistaa
+alustaa `ThingSpeak`-olio antamalla sille toimiva verkkoyhteys.
+```c++
+ThingSpeak.begin(client);
+```
+Funktiossa `loop()` puolestaan kutsutaan uutta funktiota `write2TSData()`,
+jolla data lähetetään ThinkSpeak-palveluun. Tämä tehdään vain, kun riittävän pitkä
 aika edellisestä lähetyksestä on kulunut.
 
 ```c++
