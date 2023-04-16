@@ -25,7 +25,7 @@ lopullisen sääaseman koodiin.
 - [04_wifi_https](04_wifi_https): WiFi-piirin käyttö, kirjastot, yhteyden luonti (suojattu yhteys)
 - [05_ntp](05_ntp): Haetaan NTP-aika verkosta ja näytetään näytöllä.
 - [06_ws](06_ws): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä.
-- wsThinkSpeak: Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun.
+- [wsThinkSpeak](wsThinkSpeak): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun.
 
 ## Osat
 
@@ -35,7 +35,7 @@ lopullisen sääaseman koodiin.
 - Johtoja
 - Usb-johto
 
-## Mikro-kontrolleri
+## Mikrokontrolleri
 
 Ohjelmoitavana piirinä on NodeMCU-piiri, joka sisältää ESP8266-WiFi-piirin
 verkkoyhteyksiä varten. Sen ohjelmointi tapahtuu Arduino IDE -ympäristössä C++-kielellä.
@@ -60,6 +60,10 @@ DHT11-sensorin johdotus:
 | VCC (+)| 3v3     | Virta, 3.3V   | Punainen |
 | GND (-)| GND     | Maa           | Musta    |
 | DAT    | D6      | Data          | Keltainen|
+
+**Huom!** Ole tarkkana, minkä sensorin piikin kytket mihinkin. Joissain
+DH11-sensoreissa liittimet voivat olla eri järjestyksessä kuin 
+oheisessa kuvassa. Joissain malleissa esimerkiksi data-piikki on keskellä.
 
 ### Oled-näytön kytkentä
 
