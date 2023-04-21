@@ -81,7 +81,7 @@ OLED-näyttö käyttää i2c-protokollaa. Johdotuksena:
 Jos osat (näyttö ja sensori) on ostettu eri paketissa tai eri kaupasta, niiden
 liittimissä, merkinnöissä tai järjestyksessä voi olla eroa. Katso tarkkaan!
 
-### Oled-näytön kytkentä, jos spi
+### Oled-näytön kytkentä, jos käytössä spi
 
 Esimerkiksi erikseen ostettu näyttö voi olla mallia, jossa on enemmän
 liittimiä kuin kuvan neljä. Tällaiset tukevat usein i2c-protokollan lisäksi
