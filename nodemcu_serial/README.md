@@ -10,9 +10,9 @@ kytketystä laitteesta (Micro:bit) lähetettyä sarjadataa ja lähettää sen Th
 | tx        | D2      |
 | rx        | D3      |
 | gnd       | Gnd     |
-| vcc       | vin     |
+| vcc       | 3.3V    |
 
-(Virrat kytketään yhteen, jos laitteista toinen syöttää virtaa toiseen.)
+(Virrat kytketään yhteen, jos laitteista toinen syöttää virtaa toiseen. Tarvittavan volttimäärän mukaan.)
 
 ## Asetukset
 
