@@ -1,0 +1,13 @@
+// Vaihdan WiFi:n tiedot tähän.
+const char* ssid = "sssssssss";
+const char* password = "ppppppppp";
+
+// ThingSpeak
+// Vaihda tähän ThinkSpeakin kanavan tiedot ja avaimet.
+unsigned long channelID = <kanavan numero>;
+const char* writeAPIKey = "<kirjoitus api-avain>";
+const char* readAPIKey = "<luku api-avain>";
+
+// ThingSpeakin asetuksia päivitystiheys
+const unsigned long postingInterval = 120L * 1000L; // 2 minutes
+
