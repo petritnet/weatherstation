@@ -34,6 +34,15 @@ const char* readAPIKey = "<luku api-avain>";
 const unsigned long postingInterval = 120L * 1000L; // 2 minutes
 ```
 
+## Sarjadatan nopeus
+
+Tällä koodilla sarjaliitännästä luetaan nopeudella 4800 baud.
+```c++
+s.begin(4800);
+```
+Tämä on riittävä nopeus, mutta **varmista, että lähettävän pään (Micro:bit)
+lähettää samalla nopeudella**.
+
 ## Datan muoto
 
 Sarjadata tulee tekstiriveinä muodossa, jossa on pilkuilla eroteltuina
