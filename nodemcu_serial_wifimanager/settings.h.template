@@ -1,0 +1,14 @@
+// NodeMCU:n oman tukiaseman tiedot
+// Yhdistä laitteeseen näillä tukiasematiedoilla ja valitse käytettävä wifi-verkko.
+const char* ap_ssid = "<ssid tähän>";
+const char* ap_password = "<salasana tähän>";
+
+// ThingSpeak
+// Vaihda tähän ThinkSpeakin kanavan tiedot ja avaimet.
+unsigned long channelID = <kanavan numero>;
+const char* writeAPIKey = "<kirjoitus api-avain>";
+const char* readAPIKey = "<luku api-avain>";
+
+// ThingSpeakin asetuksia päivitystiheys
+const unsigned long postingInterval = 120L * 1000L; // 2 minutes
+
