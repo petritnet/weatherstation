@@ -27,6 +27,12 @@ lopullisen sääaseman koodiin.
 - [06_ws](06_ws): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä.
 - [wsThinkSpeak](wsThinkSpeak): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun.
 
+Lisäksi on ohjeet SparkFunin Climate:bitin yhdistämiseen verkkoon NodeMCU-piirin avulla:
+- [nodemcu_serial](nodemcu_serial): NodeMCU lukee Micro:bitin sarjadatana antamat mittaustulokset ja lähettää
+   ThingSpeak-palveluun. WiFi-verkon tiedot "kovakoodattuna".
+- [nodemcu_serial_wifimanager](nodemcu_serial_wifimanager): NodeMCU lukee Micro:bitin sarjadatana antamat mittaustulokset ja lähettää
+   ThingSpeak-palveluun. WiFi-verkon yhteys WiFiManager-kirjaston avulla.
+
 ## Osat
 
 - NodeMCU V2 ESP8266 micro controller
