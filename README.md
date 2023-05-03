@@ -26,6 +26,7 @@ lopullisen sääaseman koodiin.
 - [05_ntp](05_ntp): Haetaan NTP-aika verkosta ja näytetään näytöllä.
 - [06_ws](06_ws): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä.
 - [wsThinkSpeak](wsThinkSpeak): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun.
+- [wsThinkSpeak_wifimanager](wsThinkSpeak_wifimanager): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun. Lisäksi käyttää [WiFiManageri-kirjastoa](https://github.com/tzapu/WiFiManager) käytettävän verkon valintaan.
 
 Lisäksi on ohjeet SparkFunin Climate:bitin yhdistämiseen verkkoon NodeMCU-piirin avulla:
 - [nodemcu_serial](nodemcu_serial): NodeMCU lukee Micro:bitin sarjadatana antamat mittaustulokset ja lähettää
