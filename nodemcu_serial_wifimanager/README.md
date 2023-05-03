@@ -42,7 +42,7 @@ const unsigned long postingInterval = 120L * 1000L; // 2 minutes
 ## WiFi-verkko
 
 Kun laite käynnistetään ensimmäisen kerran tai jos se ei saa yhteyttä
-tallennettuun verroon, sen wifi käynnistuu tukiasematilaan.
+tallennettuun verkkoon, sen wifi käynnistuu tukiasematilaan.
 Laite näkyy tukiasemana, jonka ssid on tiedostossa `settings.h` määritelty
 muuttujaan `ap_ssid`. Salasanana on samassa tiedostossa olevan
 muuttujan `ap_password` arvo. Tukiasemaan voi yhdistää puhelimella tai tietokoneella,
