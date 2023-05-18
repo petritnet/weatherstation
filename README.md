@@ -28,7 +28,7 @@ lopullisen sääaseman koodiin.
 - [wsThinkSpeak](wsThinkSpeak): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun.
 - [wsThinkSpeak_wifimanager](wsThinkSpeak_wifimanager): Sääasema, joka näyttää säätiedot ja kellonajan näytöllä ja lähettää dataa ThinkSpeak-palveluun. Lisäksi käyttää [WiFiManageri-kirjastoa](https://github.com/tzapu/WiFiManager) käytettävän verkon valintaan.
 
-Lisäksi on ohjeet SparkFunin Climate:bitin yhdistämiseen verkkoon NodeMCU-piirin avulla:
+Lisäksi on ohjeet [SparkFunin micro:climaten](https://www.sparkfun.com/products/16274) yhdistämiseen verkkoon NodeMCU-piirin avulla:
 - [nodemcu_serial](nodemcu_serial): NodeMCU lukee Micro:bitin sarjadatana antamat mittaustulokset ja lähettää
    ThingSpeak-palveluun. WiFi-verkon tiedot "kovakoodattuna".
 - [nodemcu_serial_wifimanager](nodemcu_serial_wifimanager): NodeMCU lukee Micro:bitin sarjadatana antamat mittaustulokset ja lähettää
